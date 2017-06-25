@@ -189,7 +189,7 @@ def test_train_nn(train_neural_network):
     test_x = np.random.rand(128, 32, 32, 3)
     test_y = np.random.rand(128, 10)
     test_k = np.random.rand(1)
-    test_optimizer = tf.train.AdamOptimizer()
+    test_optimizer = tf.train.AdamOptimizer(learning_rate=0.0001)
 
     mock_session.run = MagicMock()
     train_neural_network(mock_session, test_optimizer, test_k, test_x, test_y)
